@@ -1,0 +1,165 @@
+<!-- Created with Jaspersoft Studio version 7.0.3.final using JasperReports Library version 7.0.3-41034ca841d452f3305ba55b9042260aaa1ab5dd  -->
+<jasperReport name="Student" language="java" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="82b7a332-4c23-49cb-8a2b-857ede3edf89">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<style name="Table_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<dataset name="Dataset1" uuid="3b587e0b-f2c0-49c8-a42f-262bc3b53cff">
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+		<query language="sql"><![CDATA[]]></query>
+		<field name="subjectName" class="java.lang.String"/>
+		<field name="marksObtained" class="java.lang.Long"/>
+		<sortField name="subjectName" order="Descending"/>
+		<variable name="totalMarks" calculation="Sum" class="java.lang.Long">
+			<expression><![CDATA[$F{marksObtained}]]></expression>
+		</variable>
+	</dataset>
+	<parameter name="studentName" class="java.lang.String"/>
+	<parameter name="tableData" class="net.sf.jasperreports.engine.data.JRBeanCollectionDataSource"/>
+	<parameter name="subReport" class="net.sf.jasperreports.engine.JasperReport"/>
+	<parameter name="subDatasource" class="net.sf.jasperreports.engine.data.JRBeanCollectionDataSource"/>
+	<parameter name="subParameters" class="java.util.Map"/>
+	<query language="sql"><![CDATA[]]></query>
+	<field name="subjectName" class="java.lang.String"/>
+	<field name="marksObtained" class="java.lang.Long"/>
+	<background splitType="Stretch"/>
+	<title height="65" splitType="Stretch">
+		<element kind="frame" uuid="9c48ac71-3e56-4079-b3af-12e0bf771254" mode="Opaque" x="0" y="0" width="555" height="65" backcolor="#F72D23">
+			<element kind="image" uuid="aa9a004d-957b-4240-9dd7-0abff83ce98f" x="0" y="0" width="50" height="66" scaleImage="FillFrame">
+				<expression><![CDATA["https://www.pixelstalk.net/wp-content/uploads/2016/07/3840x2160-Images-Free-Download.jpg"]]></expression>
+			</element>
+			<element kind="staticText" uuid="92ef5ab7-9b26-4d45-95aa-b3d3dca86787" x="180" y="0" width="100" height="30" hTextAlign="Center" vTextAlign="Middle">
+				<text><![CDATA[Student Report]]></text>
+			</element>
+			<element kind="textField" uuid="2b878705-2ab7-45f9-9941-8a205aa36d2f" x="360" y="36" width="100" height="30">
+				<expression><![CDATA[$P{studentName}]]></expression>
+			</element>
+		</element>
+	</title>
+	<pageHeader height="39" splitType="Stretch">
+		<element kind="line" uuid="78c1dd36-df0b-4340-8ba1-66f79a9dba6a" x="0" y="19" width="555" height="1">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<pen lineStyle="Dashed"/>
+		</element>
+	</pageHeader>
+	<detail>
+		<band height="170" splitType="Stretch">
+			<element kind="component" uuid="028066c3-cf33-44fc-9a5f-c28cbfc11900" x="0" y="0" width="555" height="170">
+				<component kind="table">
+					<datasetRun uuid="cc34cccc-913d-4600-a106-e61dc3ffedcf" subDataset="Dataset1">
+						<dataSourceExpression><![CDATA[$P{tableData}]]></dataSourceExpression>
+					</datasetRun>
+					<column kind="single" uuid="1a9698d9-98c4-4d9b-be02-b96ac00aaf2b" width="100">
+						<tableHeader height="30" rowSpan="1" style="Table_TH"/>
+						<tableFooter height="30" rowSpan="1" style="Table_TH">
+							<element kind="staticText" uuid="f8843fcd-829c-463d-8afe-92537b6be9b4" x="0" y="0" width="100" height="30" hTextAlign="Center" vTextAlign="Middle">
+								<text><![CDATA[Total Marks]]></text>
+							</element>
+						</tableFooter>
+						<columnHeader height="30" rowSpan="1" style="Table_CH">
+							<element kind="textField" uuid="87ceb584-d26b-40e1-a756-417c1bb0ada9" x="0" y="0" width="100" height="30" hTextAlign="Center" vTextAlign="Middle">
+								<expression><![CDATA["Subject Name"]]></expression>
+							</element>
+						</columnHeader>
+						<columnFooter height="30" rowSpan="1" style="Table_CH"/>
+						<detailCell height="30" style="Table_TD">
+							<element kind="textField" uuid="36d766c1-e6ed-49dd-940b-07570d086daf" x="0" y="0" width="100" height="30" hTextAlign="Center" vTextAlign="Middle">
+								<expression><![CDATA[$F{subjectName}]]></expression>
+							</element>
+						</detailCell>
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column1"/>
+					</column>
+					<column kind="single" uuid="48aead02-d92e-424c-946d-2f36e206918c" width="100">
+						<tableHeader height="30" rowSpan="1" style="Table_TH"/>
+						<tableFooter height="30" rowSpan="1" style="Table_TH">
+							<element kind="textField" uuid="d3f3ff97-024f-4c03-bb84-27a1aa4a6b99" x="0" y="0" width="100" height="30" hTextAlign="Center" vTextAlign="Middle">
+								<expression><![CDATA[$V{totalMarks}]]></expression>
+							</element>
+						</tableFooter>
+						<columnHeader height="30" rowSpan="1" style="Table_CH">
+							<element kind="textField" uuid="35e991e2-5a76-414e-b799-10d6158cf48e" x="0" y="0" width="100" height="30" hTextAlign="Center" vTextAlign="Middle">
+								<expression><![CDATA["Marks Obtained"]]></expression>
+							</element>
+						</columnHeader>
+						<columnFooter height="30" rowSpan="1" style="Table_CH"/>
+						<detailCell height="30" style="Table_TD">
+							<element kind="textField" uuid="ec28b637-4e6d-4d25-b5dd-93afad0811a4" x="0" y="0" width="100" height="30" hTextAlign="Center" vTextAlign="Middle">
+								<expression><![CDATA[$F{marksObtained}]]></expression>
+							</element>
+						</detailCell>
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column2"/>
+					</column>
+				</component>
+				<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
+				<property name="com.jaspersoft.studio.table.style.table_header" value="Table_TH"/>
+				<property name="com.jaspersoft.studio.table.style.column_header" value="Table_CH"/>
+				<property name="com.jaspersoft.studio.table.style.detail" value="Table_TD"/>
+			</element>
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+		</band>
+	</detail>
+	<pageFooter height="60" splitType="Stretch">
+		<element kind="textField" uuid="7f313893-50c9-4fe8-a7a4-ecfe1cc4bc65" x="305" y="20" width="100" height="30" hTextAlign="Right">
+			<expression><![CDATA["Page "+$V{PAGE_NUMBER}]]></expression>
+		</element>
+		<element kind="textField" uuid="3eb22b7e-6dd6-4670-98c4-5c735793d337" x="410" y="20" width="100" height="30" evaluationTime="Report">
+			<expression><![CDATA[" of "+$V{PAGE_NUMBER}]]></expression>
+		</element>
+	</pageFooter>
+	<summary height="455" splitType="Stretch">
+		<element kind="chart" chartType="pie" uuid="eac7dc6b-216c-44a6-a367-878d751ee469" x="0" y="20" width="200" height="200" evaluationTime="Report">
+			<dataset kind="pie">
+				<series>
+					<keyExpression><![CDATA[$F{subjectName}]]></keyExpression>
+					<valueExpression><![CDATA[$F{marksObtained}]]></valueExpression>
+					<labelExpression><![CDATA[""+ $F{marksObtained}]]></labelExpression>
+				</series>
+			</dataset>
+			<plot>
+				<itemLabel/>
+			</plot>
+		</element>
+		<element kind="chart" chartType="bar3D" uuid="ea2104d2-0727-413f-b577-1a7eb6ccfd7e" x="270" y="10" width="264" height="240" evaluationTime="Report">
+			<dataset kind="category">
+				<series>
+					<seriesExpression><![CDATA[$F{subjectName}]]></seriesExpression>
+					<categoryExpression><![CDATA[$F{subjectName}]]></categoryExpression>
+					<valueExpression><![CDATA[$F{marksObtained}]]></valueExpression>
+					<labelExpression><![CDATA[$F{subjectName}]]></labelExpression>
+				</series>
+			</dataset>
+			<plot>
+				<itemLabel/>
+			</plot>
+		</element>
+		<element kind="subreport" uuid="1f40a37d-f946-4a1f-9840-5a9c4cd1be6d" x="0" y="255" width="555" height="200">
+			<parametersMapExpression><![CDATA[$P{subParameters}]]></parametersMapExpression>
+			<dataSourceExpression><![CDATA[$P{subDatasource}]]></dataSourceExpression>
+			<expression><![CDATA[$P{subReport}]]></expression>
+		</element>
+	</summary>
+</jasperReport>
