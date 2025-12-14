@@ -1,0 +1,33 @@
+# -------------------------
+# Maven / Java
+# -------------------------
+
+# Compiled class files
+*.class
+
+# Eclipse annotation processor paths
+.factorypath
+
+# Maven target folder
+target/
+
+# Package files
+*.jar
+*.war
+*.ear
+
+# Maven logs
+*.log
+
+# Eclipse files
+.project
+.classpath
+.settings/
+
+
+# VS Code files
+.vscode/
+
+# Windows files
+Thumbs.db
+ehthumbs.db
